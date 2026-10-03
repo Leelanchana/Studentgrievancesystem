@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Dashboard</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body class="student-dashboard-body">
+
+    <!-- HEADER -->
+
+    <header class="dashboard-header">
+
+        <div class="dashboard-logo">
+            🎓 Student Grievance System
+        </div>
+
+        <a href="/logout" class="dashboard-logout">
+            Logout
+        </a>
+
+    </header>
+
+
+    <!-- DASHBOARD CONTENT -->
+
+    <main class="student-dashboard">
+
+        <div class="dashboard-welcome">
+
+            <p class="dashboard-label">
+                STUDENT DASHBOARD
+            </p>
+
+            <h1>
+                Welcome, {{ name }}! 👋
+            </h1>
+
+            <p>
+                Manage your campus grievances from one place.
+            </p>
+
+        </div>
+
+
+        <!-- ACTION CARDS -->
+
+        <div class="dashboard-cards">
+
+            <!-- Submit Complaint -->
+
+            <div class="dashboard-card">
+
+                <div class="dashboard-icon">
+                    📝
+                </div>
+
+                <h2>
+                    Submit Complaint
+                </h2>
+
+                <p>
+                    Report a problem or concern related to
+                    campus facilities and services.
+                </p>
+
+                <a href="/submit_complaint" class="dashboard-btn">
+                    Submit Complaint
+                </a>
+
+            </div>
+
+
+            <!-- My Complaints -->
+
+            <div class="dashboard-card">
+
+                <div class="dashboard-icon">
+                    📋
+                </div>
+
+                <h2>
+                    My Complaints
+                </h2>
+
+                <p>
+                    View your submitted complaints and
+                    track their current status.
+                </p>
+
+                <a href="/my_complaints" class="dashboard-btn">
+                    View Complaints
+                </a>
+
+            </div>
+
+
+            <!-- Logout -->
+
+            <div class="dashboard-card">
+
+                <div class="dashboard-icon">
+                    🚪
+                </div>
+
+                <h2>
+                    Logout
+                </h2>
+
+                <p>
+                    Securely log out of your student
+                    account when you are finished.
+                </p>
+
+                <a href="/logout" class="dashboard-btn logout-card-btn">
+                    Logout
+                </a>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer class="dashboard-footer">
+
+        <p>
+            Student Grievance Management System
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

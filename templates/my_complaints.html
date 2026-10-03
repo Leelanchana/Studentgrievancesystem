@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>My Complaints</title>
+
+    <link rel="stylesheet"
+          href="/static/style.css">
+
+</head>
+
+<body>
+
+<div class="container complaints-page">
+
+    <h1>My Complaints</h1>
+
+    <p class="page-subtitle">
+        Track the status of your submitted grievances
+    </p>
+
+    {% if complaints %}
+
+    <div class="table-wrapper">
+
+        <table class="complaints-table">
+
+            <thead>
+
+                <tr>
+                    <th>Grievance ID</th>
+                    <th>Category</th>
+                    <th>Title</th>
+                    <th>Status</th>
+                    <th>View</th>
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+            {% for complaint in complaints %}
+
+            <tr>
+
+                <td>
+                    <strong>GRV{{ complaint['id'] }}</strong>
+                </td>
+
+                <td>
+                    {{ complaint['category'] }}
+                </td>
+
+                <td>
+                    {{ complaint['title'] }}
+                </td>
+
+                <td>
+
+                    {% if complaint['status'] == 'Pending' %}
+
+                        <span class="status pending">
+                            Pending
+                        </span>
+
+                    {% elif complaint['status'] == 'In Progress' %}
+
+                        <span class="status progress">
+                            In Progress
+                        </span>
+
+                    {% elif complaint['status'] == 'Resolved' %}
+
+                        <span class="status resolved">
+                            Resolved
+                        </span>
+
+                    {% elif complaint['status'] == 'Rejected' %}
+
+                        <span class="status rejected">
+                            Rejected
+                        </span>
+
+                    {% endif %}
+
+                </td>
+
+                <td>
+
+                    <a href="/complaint/{{ complaint['id'] }}"
+                       class="view-btn">
+                        View
+                    </a>
+
+                </td>
+
+            </tr>
+
+            {% endfor %}
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+    {% else %}
+
+        <div class="no-complaints">
+
+            <h3>No complaints found</h3>
+
+            <p>You have not submitted any complaints yet.</p>
+
+        </div>
+
+    {% endif %}
+
+    <div class="back-dashboard">
+
+        <a href="/student_dashboard">
+            ← Back to Dashboard
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

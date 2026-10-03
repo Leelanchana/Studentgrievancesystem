@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Login</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body class="login-body">
+
+    <div class="login-page">
+
+        <!-- LEFT SIDE -->
+        <div class="login-info">
+
+            <div class="login-logo">
+                🎓 Student Grievance System
+            </div>
+
+            <h1>
+                Welcome Back!
+            </h1>
+
+            <p>
+                Login to your student account to submit complaints,
+                track their status, and view resolutions.
+            </p>
+
+            <div class="login-feature">
+                ✓ Submit and manage complaints
+            </div>
+
+            <div class="login-feature">
+                ✓ Track complaint status
+            </div>
+
+            <div class="login-feature">
+                ✓ View complaint resolutions
+            </div>
+
+        </div>
+
+
+        <!-- RIGHT SIDE -->
+        <div class="login-card">
+
+            <h2>Student Login</h2>
+
+            <p class="login-subtitle">
+                Enter your credentials to continue
+            </p>
+
+            <form method="POST">
+
+                <label for="student_id">
+                    Student ID
+                </label>
+
+                <input
+                    type="text"
+                    id="student_id"
+                    name="student_id"
+                    placeholder="Enter your student ID"
+                    required
+                >
+
+
+                <label for="password">
+                    Password
+                </label>
+
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder="Enter your password"
+                    required
+                >
+
+
+                <button type="submit" class="login-submit">
+                    Login
+                </button>
+
+            </form>
+
+
+            <p class="register-text">
+                New student?
+                <a href="/register">Create an account</a>
+            </p>
+
+            <a href="/" class="home-link">
+                ← Back to Home
+            </a>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

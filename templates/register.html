@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Registration</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body class="register-body">
+
+    <div class="register-page">
+
+        <!-- LEFT SIDE -->
+        <div class="register-info">
+
+            <div class="register-logo">
+                🎓 Student Grievance System
+            </div>
+
+            <h1>
+                Join Our Campus Community
+            </h1>
+
+            <p>
+                Create your student account and get access to
+                our grievance management system.
+            </p>
+
+            <div class="register-feature">
+                ✓ Submit campus complaints
+            </div>
+
+            <div class="register-feature">
+                ✓ Track your complaint status
+            </div>
+
+            <div class="register-feature">
+                ✓ Receive and view resolutions
+            </div>
+
+        </div>
+
+
+        <!-- RIGHT SIDE -->
+        <div class="register-card">
+
+            <h2>Student Registration</h2>
+
+            <p class="register-subtitle">
+                Create your account to get started
+            </p>
+
+            <form method="POST">
+
+                <label for="student_id">
+                    Student ID
+                </label>
+
+                <input
+                    type="text"
+                    id="student_id"
+                    name="student_id"
+                    placeholder="Enter your student ID"
+                    required
+                >
+
+
+                <label for="name">
+                    Student Name
+                </label>
+
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Enter your full name"
+                    required
+                >
+
+
+                <label for="email">
+                    Email
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Enter your email"
+                    required
+                >
+
+
+                <label for="password">
+                    Password
+                </label>
+
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder="Create a password"
+                    required
+                >
+
+
+                <button type="submit" class="register-submit">
+                    Create Account
+                </button>
+
+            </form>
+
+
+            <p class="login-text">
+                Already registered?
+                <a href="/login">Login</a>
+            </p>
+
+            <a href="/" class="home-link">
+                ← Back to Home
+            </a>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

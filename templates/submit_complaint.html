@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Submit Complaint</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body class="submit-body">
+
+    <!-- HEADER -->
+
+    <header class="submit-header">
+
+        <div class="submit-logo">
+            🎓 Student Grievance System
+        </div>
+
+        <a href="/student_dashboard" class="submit-back">
+            ← Dashboard
+        </a>
+
+    </header>
+
+
+    <!-- MAIN CONTENT -->
+
+    <main class="submit-container">
+
+        <div class="submit-heading">
+
+            <p class="submit-label">
+                STUDENT GRIEVANCE
+            </p>
+
+            <h1>
+                Submit a Complaint
+            </h1>
+
+            <p>
+                Tell us about the issue you are facing on campus.
+                Provide the details below so it can be reviewed.
+            </p>
+
+        </div>
+
+
+        <!-- FORM CARD -->
+
+        <div class="complaint-form-card">
+
+            <form method="POST">
+
+                <!-- CATEGORY -->
+
+                <div class="form-group">
+
+                    <label for="category">
+                        Complaint Category
+                    </label>
+
+                    <select
+                        id="category"
+                        name="category"
+                        required
+                    >
+
+                        <option value="" disabled selected>
+                            Select a category
+                        </option>
+
+                        <option value="Classroom">
+                            Classroom
+                        </option>
+
+                        <option value="Laboratory">
+                            Laboratory
+                        </option>
+
+                        <option value="Transportation">
+                            Transportation
+                        </option>
+
+                        <option value="Hostel">
+                            Hostel
+                        </option>
+
+                        <option value="Internet">
+                            Internet
+                        </option>
+
+                        <option value="Library">
+                            Library
+                        </option>
+
+                        <option value="Canteen">
+                            Canteen
+                        </option>
+
+                        <option value="Other">
+                            Other
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- TITLE -->
+
+                <div class="form-group">
+
+                    <label for="title">
+                        Complaint Title
+                    </label>
+
+                    <input
+                        type="text"
+                        id="title"
+                        name="title"
+                        placeholder="Example: Wi-Fi not working"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- DESCRIPTION -->
+
+                <div class="form-group">
+
+                    <label for="description">
+                        Description
+                    </label>
+
+                    <textarea
+                        id="description"
+                        name="description"
+                        rows="6"
+                        placeholder="Describe the problem in detail..."
+                        required
+                    ></textarea>
+
+                </div>
+
+
+                <!-- LOCATION -->
+
+                <div class="form-group">
+
+                    <label for="location">
+                        Location
+                    </label>
+
+                    <input
+                        type="text"
+                        id="location"
+                        name="location"
+                        placeholder="Example: Block A, Room 204"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- BUTTONS -->
+
+                <div class="submit-buttons">
+
+                    <a href="/student_dashboard"
+                       class="cancel-btn">
+                        Cancel
+                    </a>
+
+                    <button
+                        type="submit"
+                        class="submit-complaint-btn">
+                        Submit Complaint
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer class="submit-footer">
+
+        <p>
+            Student Grievance Management System
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

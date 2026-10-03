@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Login</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body class="admin-login-body">
+
+    <div class="admin-login-page">
+
+        <!-- LEFT SIDE -->
+
+        <div class="admin-login-info">
+
+            <div class="admin-logo">
+                🎓 Student Grievance System
+            </div>
+
+            <p class="admin-label">
+                ADMINISTRATOR PORTAL
+            </p>
+
+            <h1>
+                Manage Student Grievances
+            </h1>
+
+            <p>
+                Access the administration portal to review,
+                manage, and resolve student complaints efficiently.
+            </p>
+
+            <div class="admin-feature">
+                ✓ View all student complaints
+            </div>
+
+            <div class="admin-feature">
+                ✓ Update complaint status
+            </div>
+
+            <div class="admin-feature">
+                ✓ Provide resolutions
+            </div>
+
+        </div>
+
+
+        <!-- RIGHT SIDE -->
+
+        <div class="admin-login-card">
+
+            <div class="admin-icon">
+                🔐
+            </div>
+
+            <h2>
+                Admin Login
+            </h2>
+
+            <p class="admin-subtitle">
+                Sign in to manage student complaints
+            </p>
+
+
+            <form method="POST">
+
+                <label for="username">
+                    Username
+                </label>
+
+                <input
+                    type="text"
+                    id="username"
+                    name="username"
+                    placeholder="Enter admin username"
+                    required
+                >
+
+
+                <label for="password">
+                    Password
+                </label>
+
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder="Enter admin password"
+                    required
+                >
+
+
+                <button type="submit" class="admin-login-btn">
+                    Admin Login
+                </button>
+
+            </form>
+
+
+            <a href="/" class="admin-home-link">
+                ← Back to Home
+            </a>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

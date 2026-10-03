@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Complaint Details</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body class="details-body">
+
+    <!-- HEADER -->
+
+    <header class="details-header">
+
+        <div class="details-logo">
+            🎓 Student Grievance System
+        </div>
+
+        <a href="/student_dashboard" class="details-dashboard">
+            Dashboard
+        </a>
+
+    </header>
+
+
+    <!-- MAIN -->
+
+    <main class="details-container">
+
+        <div class="details-heading">
+
+            <p class="details-label">
+                GRIEVANCE INFORMATION
+            </p>
+
+            <h1>
+                Complaint Details
+            </h1>
+
+            <p>
+                View the complete information and current status
+                of your submitted complaint.
+            </p>
+
+        </div>
+
+
+        <!-- COMPLAINT CARD -->
+
+        <div class="details-card">
+
+            <!-- CARD HEADER -->
+
+            <div class="details-card-header">
+
+                <div>
+                    <span class="details-id-label">
+                        Grievance ID
+                    </span>
+
+                    <h2>
+                        GRV{{ complaint['id'] }}
+                    </h2>
+                </div>
+
+
+                <!-- STATUS -->
+
+                <div>
+
+                    {% if complaint['status'] == 'Pending' %}
+
+                        <span class="details-status pending">
+                            Pending
+                        </span>
+
+                    {% elif complaint['status'] == 'In Progress' %}
+
+                        <span class="details-status progress">
+                            In Progress
+                        </span>
+
+                    {% elif complaint['status'] == 'Resolved' %}
+
+                        <span class="details-status resolved">
+                            Resolved
+                        </span>
+
+                    {% elif complaint['status'] == 'Rejected' %}
+
+                        <span class="details-status rejected">
+                            Rejected
+                        </span>
+
+                    {% endif %}
+
+                </div>
+
+            </div>
+
+
+            <!-- DETAILS -->
+
+            <div class="details-grid">
+
+                <div class="detail-item">
+
+                    <span class="detail-label">
+                        Category
+                    </span>
+
+                    <p>
+                        {{ complaint['category'] }}
+                    </p>
+
+                </div>
+
+
+                <div class="detail-item">
+
+                    <span class="detail-label">
+                        Location
+                    </span>
+
+                    <p>
+                        {{ complaint['location'] }}
+                    </p>
+
+                </div>
+
+
+                <div class="detail-item detail-full">
+
+                    <span class="detail-label">
+                        Complaint Title
+                    </span>
+
+                    <p>
+                        {{ complaint['title'] }}
+                    </p>
+
+                </div>
+
+
+                <div class="detail-item detail-full">
+
+                    <span class="detail-label">
+                        Description
+                    </span>
+
+                    <p class="description-text">
+                        {{ complaint['description'] }}
+                    </p>
+
+                </div>
+
+
+                <div class="detail-item detail-full">
+
+                    <span class="detail-label">
+                        Resolution
+                    </span>
+
+                    <p class="resolution-text">
+                        {{ complaint['resolution'] }}
+                    </p>
+
+                </div>
+
+
+                <div class="detail-item detail-full">
+
+                    <span class="detail-label">
+                        Date Submitted
+                    </span>
+
+                    <p>
+                        {{ complaint['date_submitted'] }}
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- ACTION -->
+
+            <div class="details-actions">
+
+                <a href="/my_complaints" class="back-complaints-btn">
+                    ← Back to My Complaints
+                </a>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer class="details-footer">
+
+        <p>
+            Student Grievance Management System
+        </p>
+
+    </footer>
+
+</body>
+
+</html>
